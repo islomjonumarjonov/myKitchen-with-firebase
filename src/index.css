@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* fonts */
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/inter-v13-latin-regular.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/inter-v13-latin-500.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/inter-v13-latin-700.woff2") format("woff2");
+}
+
+@layer components {
+  *:focus {
+    @apply outline-2 outline-dotted outline-red-400;
+  }
+
+  .max-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    @apply px-10;
+  }
+
+  .btn {
+    @apply p-1 rounded md:p-3 hover:opacity-50 cursor-pointer;
+  }
+
+  .text-dark {
+    @apply dark:text-slate-200;
+  }
+
+  .animation {
+    @apply duration-75 transition;
+  }
+
+  html {
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+  }
+
+  #root {
+    @apply flex flex-col h-full;
+  }
+
+  main {
+    flex-grow: 1;
+  }
+
+  .input {
+    @apply bg-slate-100 rounded outline outline-[2px] p-1 text-slate-800 bg-opacity-40;
+  }
+
+  .input::placeholder {
+    @apply text-slate-500;
+  }
+
+  .label {
+    @apply flex justify-between items-center gap-1 md:gap-3 lg:gap-6;
+  }
+}
