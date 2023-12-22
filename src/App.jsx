@@ -16,6 +16,7 @@ import Signup from "./pages/Signup";
 //firebase
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/firebaseConfig";
+import Create from "./pages/Create";
 
 function App() {
   const { user, dispatch, isAuthChange } = useGlobalContext();
@@ -32,6 +33,10 @@ function App() {
         {
           index: true,
           element: <Home />,
+        },
+        {
+          path: "create",
+          element: <Create />,
         },
       ],
     },

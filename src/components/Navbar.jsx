@@ -5,6 +5,7 @@ import { signOut } from "firebase/auth";
 import { useState } from "react";
 import { auth } from "../firebase/firebaseConfig";
 import { useGlobalContext } from "../hooks/useGlobalContext";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isPanding, setIsPanding] = useState();
@@ -24,9 +25,9 @@ function Navbar() {
   return (
     <header className="bg-lime-200">
       <div className="max-container flex flex-col md:flex-row items-center md:justify-between py-4 gap-3">
-        <a href="/" className="font-bold text-2xl md:text-3xl ">
+        <Link to="/" className="font-bold text-2xl md:text-3xl ">
           My Kitchen
-        </a>
+        </Link>
         <nav className="flex flex-col md:flex-row items-center gap-2 md:gap-3">
           <p className="opacity-80 text-md md:text-lg">
             Welcome, {user.displayName}
@@ -38,12 +39,12 @@ function Navbar() {
             >
               Logout
             </button>
-            <a
-              href=""
+            <Link
+              to="create"
               className="btn bg-slate-400 cursor-pointer text-white animation"
             >
               Create
-            </a>
+            </Link>
           </div>
         </nav>
       </div>
